@@ -58,6 +58,7 @@ namespace PeerProgramming_Space_Game
             // NewPlanet();
 
             AtomsStats();
+            Console.ReadLine();
         }
 
         private static void AtomsStats()
@@ -91,3 +92,8 @@ namespace PeerProgramming_Space_Game
         }
 
     }
+
+}
+    
+
+    
