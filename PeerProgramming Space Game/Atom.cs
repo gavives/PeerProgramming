@@ -13,7 +13,7 @@ namespace PeerProgramming_Space_Game
         public int ammo; // names the planet
         public bool isAlive; // set visual and other fun stuff 
         public string spaceship;
-
+        
 
         public Atom()
         {
@@ -27,16 +27,24 @@ namespace PeerProgramming_Space_Game
             this.isAlive = isAlive;
             this.spaceship = spaceship;
         }
+        
+        
         public void AtomsStats()
         {
-
-            money = 100;
-            weapons = 2;
+            Random random = new Random();
+            // random.Next(0, 3);
+            int myRandom = random.Next(0, 3);
+            money = 0;
+            weapons = 0;
             spaceship = "Arcadia";
-            if (money == 100)
-            {
-                Console.WriteLine(spaceship);
-            }
+            //if (money / 2 == 1)
+            //{
+            //    Console.WriteLine(spaceship);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You were shot down");
+            //}
         }
     }
 }

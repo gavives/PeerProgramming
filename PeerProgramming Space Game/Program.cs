@@ -15,8 +15,9 @@ namespace PeerProgramming_Space_Game
         {
             Planet planet = new Planet();
              planet.NewPlanet();
-            Atom atom = new Atom();
-            atom.AtomsStats();
+            //Atom atom = new Atom();
+            //atom.AtomsStats();
+
             Console.ReadLine();
             
         }

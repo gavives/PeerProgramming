@@ -20,6 +20,7 @@ namespace PeerProgramming_Space_Game
 
         public Planet(double gravity, double money, string name, bool isProsperous)
         {
+
             this.gravity = gravity;
             this.money = money;
             this.name = name;
@@ -27,20 +28,34 @@ namespace PeerProgramming_Space_Game
         }
         public void NewPlanet()
         {
-           // Planet earth = new Planet();
-            List<Planet> galaxy = new List<Planet>();
-            galaxy.Add(new Planet(1, 1, "earth", true));
-            galaxy.Add(new Planet(.05, 2, "Pluto", false));
-
-
-            if (galaxy[0].isProsperous)
+            Random random = new Random();
+            // random.Next(0, 3);
+            int myRandom = random.Next(0, 2);
+           
+            if (myRandom == 1)
             {
-                Console.WriteLine("You did make money");
+                isProsperous = false;
             }
             else
             {
-                Console.WriteLine("you didnt make money");
+                isProsperous = true;
             }
+            List<Planet> galaxy = new List<Planet>();
+                galaxy.Add(new Planet(1, 1, "earth", isProsperous));
+                galaxy.Add(new Planet(.05, 2, "Pluto", isProsperous));
+            
+
+                if (galaxy[0].isProsperous)
+                {
+                    Console.WriteLine("You did make money");
+                    Console.WriteLine(myRandom);
+                }
+                else
+                {
+                    Console.WriteLine("you didnt make money");
+                    Console.WriteLine(myRandom);
+                }
+            
         }
 
     }
