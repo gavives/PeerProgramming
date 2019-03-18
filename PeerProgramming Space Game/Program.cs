@@ -11,6 +11,8 @@ namespace PeerProgramming_Space_Game
 
     class Program
     {
+        private static object textBox;
+
         static void Main(string[] args)
         {
 
@@ -160,13 +162,17 @@ namespace PeerProgramming_Space_Game
                 }
             }
 
-            CenteredString(@" _________                           ___________                  .___            ");
+            CenteredString(@" _________                           ___________                   ___            ");
             CenteredString(@"/   _____/__________    ____  ____   \__    ___/___________     __| _/___________ ");
             CenteredString(@" \_____  \\____ \__  \ _/ ___\/ __ \    |    |  \_  __ \__  \   / __ |/ __ \_  __ \");
             CenteredString(@" /        \  |_> > __ \\  \__\  ___/    |    |   |  | \// __ \_/ /_/ \  ___/|  | \/");
             CenteredString(@"/_______  /   __(____  /\___  >___  >   |____|   |__|  (____  /\____ |\___  >__|   ");
             CenteredString(@"        \/|__|       \/     \/    \/                        \/      \/    \/       ");
 
+            Console.WriteLine("\n");
+
+
+           
 
 
             CenteredString("A human by the name of Atom from");
