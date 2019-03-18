@@ -17,6 +17,7 @@ namespace PeerProgramming_Space_Game
 
         public Atom()
         {
+
         }
 
         public Atom(int weapons, double money, int ammo, bool isAlive, string spaceship)
@@ -27,24 +28,8 @@ namespace PeerProgramming_Space_Game
             this.isAlive = isAlive;
             this.spaceship = spaceship;
         }
-        
-        
-        public void AtomsStats()
-        {
-            Random random = new Random();
-            // random.Next(0, 3);
-            int myRandom = random.Next(0, 3);
-            money = 0;
-            weapons = 0;
-            spaceship = "Arcadia";
-            //if (money / 2 == 1)
-            //{
-            //    Console.WriteLine(spaceship);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("You were shot down");
-            //}
-        }
+
+
+       
     }
 }
