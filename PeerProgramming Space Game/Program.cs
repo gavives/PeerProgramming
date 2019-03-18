@@ -31,10 +31,10 @@ namespace PeerProgramming_Space_Game
 
             Console.ReadLine();
             atom.weapons += 2;
-          
+
+            
             atom.money += 10;
-            Console.WriteLine($"  You have ${atom.money}.00");
-            Console.WriteLine($"  You have {atom.weapons} weapons");
+
             
 
             //Console.WriteLine(atom.money);
@@ -57,6 +57,19 @@ namespace PeerProgramming_Space_Game
             Planet planet = new Planet();
             Random random = new Random();
 
+            void CenteredString(string s)
+            {
+                if (s.Length <= Console.WindowWidth)
+                {
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                }
+                else
+                {
+                    throw new Exception("Oversided String");
+                }
+            }
+
             // random.Next(0, 3);
             int myRandom = random.Next(0, 10);
 
@@ -75,11 +88,16 @@ namespace PeerProgramming_Space_Game
             galaxy.Add(new Planet(.05, 2, "Pluto", planet.IsProsperous));
             galaxy.Add(new Planet(2, 2.5, "Waconda", planet.IsProsperous));
 
-            Console.WriteLine("What planet do you want to go to? \n 1) Earth\n 2) Pluto\n 3) Waconda ");
+            CenteredString("What planet do you want to go to?");
+            CenteredString("1. Earth");
+            CenteredString("2. Pluto");
+            CenteredString("3. Waconda");
+
+
             int travel = int.Parse(Console.ReadLine());
             travel -= 1;
             galaxy.ToArray();
-            Console.WriteLine(galaxy[travel].Name); 
+            CenteredString(galaxy[travel].Name); 
 
             
             
@@ -157,6 +175,10 @@ namespace PeerProgramming_Space_Game
 
 
             CenteredString("Press any key to advance...");
+            Console.ReadLine();
+
+            CenteredString($"  You have ${atom.money}.00");
+            CenteredString($"  You have {atom.weapons} weapons");
             //AtomsStats(atom.money += 10);
             //atom.weapons += 2; 
             //atom.spaceship += "Arcadia"; 
