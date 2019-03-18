@@ -29,7 +29,7 @@ namespace PeerProgramming_Space_Game
 
          
 
-            Console.ReadLine();
+            
             atom.weapons += 2;
 
             
@@ -42,10 +42,10 @@ namespace PeerProgramming_Space_Game
             //AtomsStats(+100, +2, "Arcadia", +2, true);
 
             Console.ReadLine();
-         
-            // travelMenu();
+            WarehouseMenu();
+             //travelMenu();
 
-            PlanetList();
+            //PlanetList();
 
             Console.ReadLine();
 
@@ -186,7 +186,7 @@ namespace PeerProgramming_Space_Game
 
             CenteredString("Press any key to advance...");
             Console.ReadLine();
-
+            atom.money += 100;
             CenteredString($"  You have ${atom.money}.00");
             CenteredString($"  You have {atom.weapons} weapons");
             //AtomsStats(atom.money += 10);
@@ -201,45 +201,88 @@ namespace PeerProgramming_Space_Game
 
         private static void WarehouseMenu()
         {
-            
-            //Console.Clear();
-           
-            Console.Write("\n\n 1) MONEY\n 2) WEAPONS\n 3) Fuel\n 4) SELL WEAPONS\n 5) SELL FUEL\n\n  ");
-            //int caseSwitch = 1;
-            int menuOption = int.Parse(Console.ReadLine());
-            try
-            {
+            Planet planet = new Planet();
+            Atom atom = new Atom();
+            int menu = MenuOptions();
+            bool exit = false;
 
-            
-       
-                switch (menuOption)
+            void CenteredString(string s)
+            {
+                if (s.Length <= Console.WindowWidth)
                 {
-                        case 1:
-                            Console.WriteLine("\n MONEY");
-                            break;
-                        case 2:
-                            Console.WriteLine("\n BUY WEAPONS");
-                            break;
-                        case 3:
-                            Console.WriteLine("\n BUY FUEL");
-                            break;
-                        case 4:
-                            Console.WriteLine("\n SELL WEAPONS" );
-                            break;
-                        case 5:
-                            Console.WriteLine("\n SELL FUEL");
-                            break;
-                        default:
-                            Console.WriteLine("\n Leave Menu");
-                            break;
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                }
+                else
+                {
+                    throw new Exception("Oversided String");
                 }
             }
 
-                 catch (Exception)
-            {
 
-                WarehouseMenu();
+            //MenuOptions();
+
+            
+
+           
+                switch (menu)
+                {
+                    
+                        case 1:
+                        CenteredString("MONEY");
+                            break;
+                        case 2:
+                        CenteredString("How many weapons do you want to buy? ");
+                    int purchaseWeapon = int.Parse(Console.ReadLine());
+                   
+                    atom.money += 5 * purchaseWeapon;
+  
+
+                        CenteredString(atom.money.ToString());
+                            break;
+                        case 3:
+                        CenteredString("BUY FUEL");
+                            break;
+                        case 4:
+                        CenteredString("SELL WEAPONS" );
+                            break;
+                        case 5:
+                        CenteredString("SELL FUEL");
+                            break;
+                        case 6:
+                         CenteredString("Exit");
+                           break;
+                }
+
+                // Console.Clear();
+
+            
+
+        }
+        private static int MenuOptions()
+        {
+            void CenteredString(string s)
+            {
+                if (s.Length <= Console.WindowWidth)
+                {
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                }
+                else
+                {
+                    throw new Exception("Oversided String");
+                }
             }
+
+            CenteredString("1) MONEY");
+            CenteredString("   2) WEAPONS");
+            CenteredString("3) Fuel");
+            CenteredString("        4) SELL WEAPONS");
+            CenteredString("    5) SELL FUEL");
+            CenteredString("      6) Leave menu");
+           
+            return int.Parse(Console.ReadLine());
+           
         }
 
 
