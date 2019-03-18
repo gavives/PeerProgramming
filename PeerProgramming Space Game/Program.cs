@@ -57,18 +57,7 @@ namespace PeerProgramming_Space_Game
             Planet planet = new Planet();
             Random random = new Random();
 
-            void CenteredString(string s)
-            {
-                if (s.Length <= Console.WindowWidth)
-                {
-                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
-                    Console.WriteLine(s);
-                }
-                else
-                {
-                    throw new Exception("Oversided String");
-                }
-            }
+           
 
             // random.Next(0, 3);
             int myRandom = random.Next(0, 10);
@@ -88,12 +77,25 @@ namespace PeerProgramming_Space_Game
             galaxy.Add(new Planet(.05, 2, "Pluto", planet.IsProsperous));
             galaxy.Add(new Planet(2, 2.5, "Waconda", planet.IsProsperous));
 
+            void CenteredString(string s)
+            {
+                if (s.Length <= Console.WindowWidth)
+                {
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                }
+                else
+                {
+                    throw new Exception("Oversided String");
+                }
+            }
+
             CenteredString("What planet do you want to go to?");
             CenteredString("1. Earth");
             CenteredString("2. Pluto");
             CenteredString("3. Waconda");
-
-
+            
+           // Console.Clear();
             int travel = int.Parse(Console.ReadLine());
             travel -= 1;
             galaxy.ToArray();
@@ -157,6 +159,14 @@ namespace PeerProgramming_Space_Game
                     throw new Exception("Oversided String");
                 }
             }
+
+            CenteredString(@" _________                           ___________                  .___            ");
+            CenteredString(@"/   _____/__________    ____  ____   \__    ___/___________     __| _/___________ ");
+            CenteredString(@" \_____  \\____ \__  \ _/ ___\/ __ \    |    |  \_  __ \__  \   / __ |/ __ \_  __ \");
+            CenteredString(@" /        \  |_> > __ \\  \__\  ___/    |    |   |  | \// __ \_/ /_/ \  ___/|  | \/");
+            CenteredString(@"/_______  /   __(____  /\___  >___  >   |____|   |__|  (____  /\____ |\___  >__|   ");
+            CenteredString(@"        \/|__|       \/     \/    \/                        \/      \/    \/       ");
+
 
 
             CenteredString("A human by the name of Atom from");
