@@ -94,8 +94,8 @@ namespace PeerProgramming_Space_Game
             CenteredString("1. Earth");
             CenteredString("2. Pluto");
             CenteredString("3. Waconda");
-            
-           // Console.Clear();
+
+
             int travel = int.Parse(Console.ReadLine());
             travel -= 1;
             galaxy.ToArray();
