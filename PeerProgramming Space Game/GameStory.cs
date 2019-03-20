@@ -9,7 +9,7 @@ namespace PeerProgramming_Space_Game
      static class  GameStory
     {
   
-        public static void gameStartStory()
+        public static void GameStartStory()
         {
             Atom atom = new Atom();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -56,7 +56,7 @@ namespace PeerProgramming_Space_Game
            // CenteredString("Press any key to advance...");
             //Console.ReadLine();
             atom.money += 100;
-            CenteredString($"  You have ${atom.money}.00");
+            CenteredString($"  You start with ${atom.money}.00");
             //CenteredString($"  You have {atom.weapons} weapons");
             //AtomsStats(atom.money += 10);
             //atom.weapons += 2; 

@@ -43,10 +43,12 @@ namespace PeerProgramming_Space_Game
             //int myRandom = random.Next(0, 10);
 
 
-            List<Planet> galaxy = new List<Planet>();
-            galaxy.Add(new Planet(1, 1, "Earth", planet.IsProsperous));
-            galaxy.Add(new Planet(2, 2, "Pluto", planet.IsProsperous));
-            galaxy.Add(new Planet(10, 2.5, "Waconda", planet.IsProsperous));
+            List<Planet> galaxy = new List<Planet>
+            {
+                new Planet(1, 1, "Earth", planet.IsProsperous),
+                new Planet(2, 2, "Pluto", planet.IsProsperous),
+                new Planet(10, 2.5, "Waconda", planet.IsProsperous)
+            };
 
             void CenteredString(string s)
             {
@@ -74,22 +76,60 @@ namespace PeerProgramming_Space_Game
                 galaxy.ToArray();
                 CenteredString($"You are headed to {galaxy[travel].Name}");
                 Age += galaxy[travel].age;
-                Console.WriteLine(age);
-            travelToPlanet();
+            Console.WriteLine("");
+            CenteredString($" Your age is now {age}!");
+            TravelToPlanet();
 
 
         }
-        public void travelToPlanet()
+        public void TravelToPlanet()
         {
             Atom atom = new Atom();
-            Console.WriteLine("Travel to a Planet?");
-            Console.Write("Y. yes \nN. no");
+            void CenteredString(string s)
+            {
+                if (s.Length <= Console.WindowWidth)
+                {
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                }
+                else
+                {
+                    throw new Exception("Oversided String");
+                }
+            }
+
+            CenteredString("");
+            CenteredString("Travel to a Planet?");
+            CenteredString("Y. yes");
+            CenteredString("N. no");     
+            CenteredString("");
+
             string YN = Console.ReadLine();
+
+            Console.Clear();
+
             YN = YN.ToUpper();
             if (YN == "Y")
             {
                 PlanetList();
             }
+            else 
+            {
+                Console.WriteLine("");
+                Console.WriteLine("");
+                CenteredString("Quit game?");
+                CenteredString("Y. Quit ");
+                CenteredString("            N. Return to game. ");
+                string quit = Console.ReadLine();
+                quit = quit.ToUpper();
+                if (quit == "N")
+                {
+                    PlanetList();
+                }
+
+
+            }
+         
             
 
 
