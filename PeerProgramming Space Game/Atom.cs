@@ -12,7 +12,7 @@ namespace PeerProgramming_Space_Game
         public double money; // money exchange rate
         public int ammo; // names the planet
         public bool isAlive; // set visual and other fun stuff 
-        public string spaceship;
+        public int age;
         
 
         public Atom()
@@ -20,13 +20,13 @@ namespace PeerProgramming_Space_Game
 
         }
 
-        public Atom(int weapons, double money, int ammo, bool isAlive, string spaceship)
+        public Atom(int weapons, double money, int ammo, bool isAlive, int age)
         {
             this.weapons = weapons;
             this.money = money;
             this.ammo = ammo;
             this.isAlive = isAlive;
-            this.spaceship = spaceship;
+            this.age = age;
         }
 
 
