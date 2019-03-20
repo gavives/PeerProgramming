@@ -53,10 +53,10 @@ namespace PeerProgramming_Space_Game
 
 
 
-           // CenteredString("Press any key to advance...");
+            // CenteredString("Press any key to advance...");
             //Console.ReadLine();
             atom.money += 100;
-            CenteredString($"  You start with ${atom.money}.00");
+            atom.age += 25;
             //CenteredString($"  You have {atom.weapons} weapons");
             //AtomsStats(atom.money += 10);
             //atom.weapons += 2; 

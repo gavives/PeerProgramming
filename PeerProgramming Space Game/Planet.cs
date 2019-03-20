@@ -33,7 +33,7 @@ namespace PeerProgramming_Space_Game
         public void PlanetList()
         {
             
-            //Atom atom = new Atom();
+            Atom atom = new Atom();
             Planet planet = new Planet();
             //Random random = new Random();
 
@@ -76,8 +76,11 @@ namespace PeerProgramming_Space_Game
                 galaxy.ToArray();
                 CenteredString($"You are headed to {galaxy[travel].Name}");
                 Age += galaxy[travel].age;
+            Console.WriteLine(atom.age);
+            atom.age += Age;
+            Console.WriteLine(atom.age);
             Console.WriteLine("");
-            CenteredString($" Your age is now {age}!");
+            CenteredString($" Your age is now {atom.age}!");
             TravelToPlanet();
 
 
@@ -97,17 +100,19 @@ namespace PeerProgramming_Space_Game
                     throw new Exception("Oversided String");
                 }
             }
-
+            Console.ForegroundColor = ConsoleColor.Red;
             CenteredString("");
             CenteredString("Travel to a Planet?");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             CenteredString("Y. yes");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             CenteredString("N. no");     
             CenteredString("");
-
+         
             string YN = Console.ReadLine();
 
             Console.Clear();
-
+            Console.ForegroundColor = ConsoleColor.Green;
             YN = YN.ToUpper();
             if (YN == "Y")
             {
@@ -129,6 +134,7 @@ namespace PeerProgramming_Space_Game
 
 
             }
+             
          
             
 

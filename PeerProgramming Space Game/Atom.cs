@@ -27,6 +27,7 @@ namespace PeerProgramming_Space_Game
             this.ammo = ammo;
             this.isAlive = isAlive;
             this.age = age;
+            
         }
 
 
