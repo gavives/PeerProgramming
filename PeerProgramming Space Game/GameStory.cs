@@ -12,7 +12,7 @@ namespace PeerProgramming_Space_Game
         public static void GameStartStory()
         {
             Atom atom = new Atom();
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Magenta;
 
             void CenteredString(string s)
             {

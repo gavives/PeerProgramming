@@ -147,7 +147,7 @@ namespace PeerProgramming_Space_Game
             string YN = Console.ReadLine();
 
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             YN = YN.ToUpper();
             if (YN == "Y")
             {
