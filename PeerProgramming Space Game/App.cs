@@ -19,6 +19,7 @@ namespace PeerProgramming_Space_Game
             planet.TravelToPlanet();
 
             ExitStatement();
+
             Console.ReadLine();
 
         }
@@ -27,17 +28,18 @@ namespace PeerProgramming_Space_Game
         {
 
              void CenteredString(string s)
-            {
+             {
                 if (s.Length <= Console.WindowWidth)
                 {
                     Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
                     Console.WriteLine(s);
                 }
+
                 else
                 {
                     throw new Exception("Oversided String");
                 }
-            }
+             }
             Console.WriteLine("\n\n");
          
             CenteredString("Good bye!");

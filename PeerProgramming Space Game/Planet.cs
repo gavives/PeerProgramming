@@ -147,9 +147,10 @@ namespace PeerProgramming_Space_Game
 
 
          public void TravelToPlanet()
-        {
+         {
            
             Atom atom = new Atom();
+
             void CenteredString(string s)
             {
                 if (s.Length <= Console.WindowWidth)
@@ -162,34 +163,47 @@ namespace PeerProgramming_Space_Game
                     throw new Exception("Oversided String");
                 }
             }
+
             Console.ForegroundColor = ConsoleColor.Red;
+
             CenteredString("");
-            CenteredString("Travel to a Planet?");
+            //CenteredString("Travel to a Planet?");
+
             Console.ForegroundColor = ConsoleColor.Yellow;
-            CenteredString("Y. yes");
-            CenteredString("N. no");     
-            CenteredString("");
+
+            CenteredString("T. Travel to a Planet?");
+            CenteredString("W. Warehouse?         ");
+            CenteredString("L. Leave game?        ");
+            //CenteredString("");
             atom.ArtEarth();
             //Console.WriteLine("");
             ConsoleKey key = Console.ReadKey(true).Key;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Magenta;
-            if (key == ConsoleKey.Y)
+            if (key == ConsoleKey.T)
             {
                 PlanetList();
             }
-            else
+            else if (key == ConsoleKey.L)
             {
-                Console.WriteLine("");
-                Console.WriteLine("");
+                //Console.WriteLine("");
+                //Console.WriteLine("");
                 CenteredString("Quit game?");
-                Console.WriteLine("\n");
-                CenteredString("    ENTER) Quit.          ");
+                //Console.WriteLine("\n");
+                CenteredString("        Q) Quit.          ");
                 CenteredString("        N) Return to game.");
-                if (key == ConsoleKey.N)
+                Console.WriteLine("");
+                ConsoleKey key1 = Console.ReadKey(true).Key;
+                if (key1 == ConsoleKey.N)
                 {
                     PlanetList();
                 }
+                else if (key1 == ConsoleKey.Q)
+                {
+
+                }
+             
+
                 //string quit = Console.ReadLine();
                 //quit = quit.ToUpper();
                 //if (quit == "N")
@@ -197,6 +211,12 @@ namespace PeerProgramming_Space_Game
                 //    PlanetList();
                 //}
             }
+            else if (key == ConsoleKey.W)
+            {
+                WareHouse wareHouse = new WareHouse();
+                wareHouse.WarehouseMenu();
+            }
+           
 
             //string YN = Console.ReadLine();
 
@@ -223,6 +243,6 @@ namespace PeerProgramming_Space_Game
                 
             //}
             // atom.age += Planet.Current - PlanetList;  
-        }
+         }
     }
 }
