@@ -29,8 +29,57 @@ namespace PeerProgramming_Space_Game
             this.age = age;
             
         }
+        public void ArtEarth()
+        {
+            //void CenteredString(string s)
+            //{
+            //    if (s.Length <= Console.WindowWidth)
+            //    {
+            //        Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+            //        Console.WriteLine(s);
+            //    }
+            //    else
+            //    {
+            //        throw new Exception("Oversided String");
+            //    }
+            //}
+            Console.WriteLine(@"              _____");
+            Console.WriteLine(@"          .-'.  ':'  -.");
+            Console.WriteLine(@"        .''::: .:      '.");
+            Console.WriteLine(@"       /   :::::'        \");
+            Console.WriteLine(@"      ;.    ':' `         ;");
+            Console.WriteLine(@"      |       '..         |");
+            Console.WriteLine(@"      ; '      ::::.      ;");
+            Console.WriteLine(@"       \       '::::     /");
+            Console.WriteLine(@"        '.      :::    .'");
+            Console.WriteLine(@"           '-.___'_.-'");
+        }
+        public void ArtAtom()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("	                   							          <>" +
+  "		   								                   .-\"\"\" -.       ||::::::==========\n " +
+  "									  /=       \\      ||::::::==========\n" +
+  "									  |- /~~~\\  |     ||::::::==========\n" +
+  "									  |=( '.' ) |     ||================\n" +
+  "									  \\__\\_=_/__/     ||================\n" +
+  "									   {_______}      ||================\n" +
+  "									 /` *       `'--._||\n" +
+  "									/= .     [] .     { >\n" +
+  "								       /  /|ooo     |`'--'||\n" +
+  "								      (   )\\_______/      ||\n" +
+  "								       \\``\\/       \\      ||\n" +
+  "									`-| ==    \\_|     ||\n" +
+  "									  /         |     ||\n" +
+  "									 |=   >\\  __/     ||\n" +
+  "									 \\   \\ |- --|     ||\n" +
+  "									  \\ __| \\___/     ||\n" +
+  "								          _{__} _{__}     ||\n" +
+  "									 (    )(    )     ||\n" +
+  "								 ^^~  `\"\"\"  `\"\"\"  ~^^^~^^~~~^^^~^^^~^^^~^^~^");
+
+        }
 
 
-       
     }
 }

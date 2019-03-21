@@ -59,6 +59,7 @@ namespace PeerProgramming_Space_Game
             CenteredString("  3. Waconda");
             CenteredString($" You are at {currentPlanet.Name}");
             //Console.WriteLine();
+            atom.ArtAtom();
             int travel = 0;
             ConsoleKey key = Console.ReadKey(true).Key;
             if (key == ConsoleKey.D1)
@@ -118,8 +119,9 @@ namespace PeerProgramming_Space_Game
             }
 
             CenteredString($"${Money}");
+            Console.WriteLine();
+            Console.Clear();
            
-
             TravelToPlanet();
 
         }
@@ -129,7 +131,7 @@ namespace PeerProgramming_Space_Game
             Random random = new Random();
             //random.Next(0, 3);
             int myRandom = random.Next(1, 101);
-            Console.WriteLine($"{myRandom} is the random number");
+            //Console.WriteLine($"{myRandom} is the random number");
             return myRandom;
         }
 
@@ -167,17 +169,16 @@ namespace PeerProgramming_Space_Game
             CenteredString("Y. yes");
             CenteredString("N. no");     
             CenteredString("");
-         
-            string YN = Console.ReadLine();
-
+            atom.ArtEarth();
+            //Console.WriteLine("");
+            ConsoleKey key = Console.ReadKey(true).Key;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Magenta;
-            YN = YN.ToUpper();
-            if (YN == "Y")
+            if (key == ConsoleKey.Y)
             {
                 PlanetList();
             }
-            else 
+            else
             {
                 Console.WriteLine("");
                 Console.WriteLine("");
@@ -185,14 +186,42 @@ namespace PeerProgramming_Space_Game
                 Console.WriteLine("\n");
                 CenteredString("    ENTER) Quit.          ");
                 CenteredString("        N) Return to game.");
-                string quit = Console.ReadLine();
-                quit = quit.ToUpper();
-                if (quit == "N")
+                if (key == ConsoleKey.N)
                 {
                     PlanetList();
                 }
-                
+                //string quit = Console.ReadLine();
+                //quit = quit.ToUpper();
+                //if (quit == "N")
+                //{
+                //    PlanetList();
+                //}
             }
+
+            //string YN = Console.ReadLine();
+
+          
+            //YN = YN.ToUpper();
+            //if (YN == "Y")
+            //{
+            //    PlanetList();
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("");
+            //    Console.WriteLine("");
+            //    CenteredString("Quit game?");
+            //    Console.WriteLine("\n");
+            //    CenteredString("    ENTER) Quit.          ");
+            //    CenteredString("        N) Return to game.");
+            //    string quit = Console.ReadLine();
+            //    quit = quit.ToUpper();
+            //    if (quit == "N")
+            //    {
+            //        PlanetList();
+            //    }
+                
+            //}
             // atom.age += Planet.Current - PlanetList;  
         }
     }

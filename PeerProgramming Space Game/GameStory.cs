@@ -54,7 +54,7 @@ namespace PeerProgramming_Space_Game
 
 
             // CenteredString("Press any key to advance...");
-            //Console.ReadLine();
+            Console.ReadLine();
             atom.money += 100;
             atom.age += 25;
             //CenteredString($"  You have {atom.weapons} weapons");
