@@ -12,9 +12,10 @@ namespace PeerProgramming_Space_Game
         {
             Planet planet = new Planet();
             Atom atom = new Atom();
+            
 
             int menu = MenuOptions();
-            bool exit = false;
+            bool exit = true;
 
             void CenteredString(string s)
             {
@@ -33,7 +34,7 @@ namespace PeerProgramming_Space_Game
             //MenuOptions();
 
 
-            while (!exit)
+            while (exit)
             {
                 menu.ToString();
 
@@ -41,16 +42,18 @@ namespace PeerProgramming_Space_Game
                 {
 
                     case 1:
-                        CenteredString("MONEY");
+                        CenteredString($" You have ${atom.Money}");
                         break;
                     case 2:
+                        
                         CenteredString("How many weapons do you want to buy? ");
                         int purchaseWeapon = int.Parse(Console.ReadLine());
-
+                        Console.WriteLine($"{purchaseWeapon} weapons purchased");
                         // atom.money -= 5 * purchaseWeapon;
-
-
-                        CenteredString(atom.money.ToString());
+                        atom.weapons += purchaseWeapon;
+                        atom.Money -= purchaseWeapon * 10;
+                        Console.WriteLine($"${atom.Money} money. {atom.weapons} weapons");
+                        //CenteredString(atom.money.ToString());
                         break;
                     case 3:
                         CenteredString("BUY FUEL");
@@ -63,17 +66,21 @@ namespace PeerProgramming_Space_Game
                         break;
                     case 6:
                         CenteredString("Exit");
-                        exit = true;
-                        continue;
+                        exit = false;
+                        break;
                 }
                 CenteredString("menu again? Y or N");
-                string exitmenu = Console.ReadLine();
-                exitmenu.ToUpper();
-                if (exitmenu == "N")
+                ConsoleKey key = Console.ReadKey(true).Key;
+                if (key == ConsoleKey.Y)
                 {
-                    exit = true;
+                    Console.Clear();
+                    MenuOptions();
                 }
-
+                else if (key == ConsoleKey.N)
+                {
+                    exit = false;
+                }
+               
                 // Console.Clear();
 
             }

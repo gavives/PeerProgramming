@@ -12,7 +12,7 @@ namespace PeerProgramming_Space_Game
         private Planet currentPlanet;
 
         public int    Age          { get; set; } = 25;
-        public double Money        { get; set; } 
+        public double Money        { get; set; }
         public string Name         { get; set; }
         public bool   IsProsperous { get; set; }
 
@@ -56,7 +56,7 @@ namespace PeerProgramming_Space_Game
             CenteredString("What planet do you want to go to?");
             CenteredString("1. Earth");
             CenteredString("2. Pluto");
-            CenteredString("  3. Waconda");
+            CenteredString("  3. Waconda");      
             CenteredString($" You are at {currentPlanet.Name}");
             //Console.WriteLine();
             atom.ArtAtom();
@@ -202,47 +202,16 @@ namespace PeerProgramming_Space_Game
                 {
 
                 }
-             
 
-                //string quit = Console.ReadLine();
-                //quit = quit.ToUpper();
-                //if (quit == "N")
-                //{
-                //    PlanetList();
-                //}
             }
             else if (key == ConsoleKey.W)
             {
                 WareHouse wareHouse = new WareHouse();
                 wareHouse.WarehouseMenu();
+                PlanetList();
+
             }
-           
 
-            //string YN = Console.ReadLine();
-
-          
-            //YN = YN.ToUpper();
-            //if (YN == "Y")
-            //{
-            //    PlanetList();
-            //}
-            //else 
-            //{
-            //    Console.WriteLine("");
-            //    Console.WriteLine("");
-            //    CenteredString("Quit game?");
-            //    Console.WriteLine("\n");
-            //    CenteredString("    ENTER) Quit.          ");
-            //    CenteredString("        N) Return to game.");
-            //    string quit = Console.ReadLine();
-            //    quit = quit.ToUpper();
-            //    if (quit == "N")
-            //    {
-            //        PlanetList();
-            //    }
-                
-            //}
-            // atom.age += Planet.Current - PlanetList;  
          }
     }
 }
