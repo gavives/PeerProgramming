@@ -32,45 +32,65 @@ namespace PeerProgramming_Space_Game
 
 
             //MenuOptions();
-
+            ConsoleKey key = Console.ReadKey(true).Key;
 
             while (exit)
             {
-                menu.ToString();
+               
+                
+                MenuOptions();
 
-                switch (menu)
+                if (key == ConsoleKey.D1)
                 {
-
-                    case 1:
-                        CenteredString($" You have ${atom.Money}");
-                        break;
-                    case 2:
-                        
-                        CenteredString("How many weapons do you want to buy? ");
-                        int purchaseWeapon = int.Parse(Console.ReadLine());
-                        Console.WriteLine($"{purchaseWeapon} weapons purchased");
-                        // atom.money -= 5 * purchaseWeapon;
-                        atom.weapons += purchaseWeapon;
-                        atom.Money -= purchaseWeapon * 10;
-                        Console.WriteLine($"${atom.Money} money. {atom.weapons} weapons");
-                        //CenteredString(atom.money.ToString());
-                        break;
-                    case 3:
-                        CenteredString("BUY FUEL");
-                        break;
-                    case 4:
-                        CenteredString("SELL WEAPONS");
-                        break;
-                    case 5:
-                        CenteredString("SELL FUEL");
-                        break;
-                    case 6:
-                        CenteredString("Exit");
-                        exit = false;
-                        break;
+                    CenteredString($" You have ${atom.Money}");
                 }
+                else if (key == ConsoleKey.D2)
+                {
+                    CenteredString("How many weapons do you want to buy? ");
+                    int purchaseWeapon = int.Parse(Console.ReadLine());
+                    Console.WriteLine($"{purchaseWeapon} weapons purchased");
+                    // atom.money -= 5 * purchaseWeapon;
+                    atom.weapons += purchaseWeapon;
+                    atom.Money -= purchaseWeapon * 10;
+                    Console.WriteLine($"${atom.Money} money. {atom.weapons} weapons");
+                }
+                else if (key == ConsoleKey.D3)
+                {
+                    CenteredString("BUY FUEL");
+                }
+                else if (key == ConsoleKey.D4)
+                {
+                    CenteredString("Exit");
+                    exit = false;
+                }
+                else
+                {
+                    CenteredString("Invalid Input!");
+
+                }
+                Console.WriteLine("");
+
+                //switch (menu)
+                //{
+
+                
+                //    case 3:
+                //        CenteredString("BUY FUEL");
+                //        break;
+                //    case 4:
+                //        CenteredString("SELL WEAPONS");
+                //        break;
+                //    case 5:
+                //        CenteredString("SELL FUEL");
+                //        break;
+                //    case 6:
+                //        CenteredString("Exit");
+                //        exit = false;
+                //        break;
+                //}
                 CenteredString("menu again? Y or N");
-                ConsoleKey key = Console.ReadKey(true).Key;
+                //ConsoleKey key1 = Console.ReadKey(true).Key;
+
                 if (key == ConsoleKey.Y)
                 {
                     Console.Clear();
@@ -104,9 +124,8 @@ namespace PeerProgramming_Space_Game
             CenteredString("1) MONEY");
             CenteredString("   2) WEAPONS");
             CenteredString("3) Fuel");
-            CenteredString("        4) SELL WEAPONS");
-            CenteredString("    5) SELL FUEL");
-            CenteredString("      6) Leave menu");
+            CenteredString("      4) Leave menu");
+         
 
             return int.Parse(Console.ReadLine());
 
